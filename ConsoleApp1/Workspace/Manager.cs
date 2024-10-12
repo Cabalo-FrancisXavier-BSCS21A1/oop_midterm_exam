@@ -29,7 +29,7 @@
         string[] _skills = [];
         public Developer(string? name, decimal salary, string[]? skills = null) : base(name, salary)
         {
-            _skills = skills ?? [];
+            _skills = skills ?? ["css,c#,mvc,sql,javascript"];
         }
 
         public override void Work()
@@ -39,13 +39,13 @@
 
         public override string ToString()
         {
-            return $"Developer {Name} is coding. Knows {string.Join(",",_skills)}";
+            return $"Developer {Name} is coding. Knows {string.Join(",", _skills)}.";
         }
     }
 
     public class Manager : Employee
     {
-        public Manager(string? name, decimal salary, int teamSize) : base(name, salary)
+        public Manager(string? name, int teamSize, decimal salary) : base(name, salary)
         {
             TeamSize = teamSize;
         }
@@ -54,12 +54,12 @@
 
         public override void Work()
         {
-            Console.WriteLine($"{Name} is managing a team of {TeamSize} members.");
+            Console.WriteLine($"{Name} is managing a team of {TeamSize} members");
         }
 
         public override string ToString()
         {
-            return $"{Name} is managing a team of {TeamSize} members.";
+            return $"{Name} is managing a team of {TeamSize} members";
         }
 
 
